@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_レイヤー_1" data-name="レイヤー_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 30 30">
+  <!-- Generator: Adobe Illustrator 29.0.0, SVG Export Plug-In . SVG Version: 2.1.0 Build 186)  -->
+  <defs>
+    <style>
+      .st0 {
+        stroke-width: 3px;
+      }
+
+      .st0, .st1 {
+        fill: none;
+        stroke: #f18d00;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .st2 {
+        fill: #ffee7d;
+      }
+
+      .st1 {
+        stroke-width: 2px;
+      }
+
+      .st3 {
+        fill: #f18d00;
+      }
+    </style>
+  </defs>
+  <g id="_グループ_400" data-name="グループ_400">
+    <g id="_グループ_399" data-name="グループ_399">
+      <rect id="_長方形_130" data-name="長方形_130" class="st2" x=".7" y="3.3" width="27.8" height="24.4" rx="2" ry="2"/>
+      <rect id="_長方形_131" data-name="長方形_131" class="st0" x="1.6" y="4.2" width="26.8" height="23.5" rx="1.9" ry="1.9"/>
+      <line id="_線_32" data-name="線_32" class="st0" x1="2.5" y1="10.8" x2="28.2" y2="10.8"/>
+      <line id="_線_33" data-name="線_33" class="st1" x1="9" y1="2" x2="9" y2="6.3"/>
+      <line id="_線_34" data-name="線_34" class="st1" x1="21.1" y1="2" x2="21.1" y2="6.3"/>
+      <rect id="_長方形_132" data-name="長方形_132" class="st3" x="1" y="11.6" width="26.8" height="15.5"/>
+      <path id="_パス_794" data-name="パス_794" class="st2" d="M7.5,14.5c0,.6-.5,1.2-1.2,1.2s-1.2-.5-1.2-1.2c0-.6.5-1.2,1.2-1.2h0c.6,0,1.2.5,1.2,1.2"/>
+      <path id="_パス_795" data-name="パス_795" class="st2" d="M13,14.5c0,.6-.5,1.2-1.2,1.2s-1.2-.5-1.2-1.2.5-1.2,1.2-1.2c.6,0,1.2.5,1.2,1.2h0"/>
+      <path id="_パス_796" data-name="パス_796" class="st2" d="M18.5,14.5c0,.6-.5,1.2-1.2,1.2s-1.2-.5-1.2-1.2.5-1.2,1.2-1.2,1.2.5,1.2,1.2h0"/>
+      <path id="_パス_797" data-name="パス_797" class="st2" d="M23.9,14.5c0,.6-.5,1.2-1.2,1.2s-1.2-.5-1.2-1.2.5-1.2,1.2-1.2,1.2.5,1.2,1.2h0"/>
+      <path id="_パス_798" data-name="パス_798" class="st2" d="M7.5,21.1c0,.6-.5,1.2-1.2,1.2-.6,0-1.2-.5-1.2-1.2,0-.6.5-1.2,1.2-1.2s1.2.5,1.2,1.2h0"/>
+      <path id="_パス_799" data-name="パス_799" class="st2" d="M13,21.1c0,.6-.5,1.2-1.2,1.2s-1.2-.5-1.2-1.2c0-.6.5-1.2,1.2-1.2.6,0,1.2.5,1.2,1.2h0"/>
+      <path id="_パス_800" data-name="パス_800" class="st2" d="M18.5,21.1c0,.6-.5,1.2-1.2,1.2-.6,0-1.2-.5-1.2-1.2,0-.6.5-1.2,1.2-1.2s1.2.5,1.2,1.2h0"/>
+      <path id="_パス_801" data-name="パス_801" class="st2" d="M23.9,21.1c0,.6-.5,1.2-1.2,1.2-.6,0-1.2-.5-1.2-1.2,0-.6.5-1.2,1.2-1.2s1.2.5,1.2,1.2h0"/>
+    </g>
+  </g>
+</svg>
