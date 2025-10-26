@@ -1,0 +1,1945 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+  <!-- Add the new slick-theme.css if you want the default styling-->
+  <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+  <title>pocketコピー作品</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+
+
+  
+  <style>
+    /* ==========================================================================
+       1. リセット・基本設定
+       ========================================================================== */
+    
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      background-color: #ffee7d;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      box-sizing: border-box;
+      font-family: "Noto Sans JP", sans-serif;
+      color: #563832;
+      font-size: 14px;
+      line-height: 1.8;
+      overflow-x: hidden; 
+    }
+
+    *, *::before, *::after { 
+      box-sizing: inherit; 
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      
+    }
+
+    a {
+      text-decoration: none;
+      color: #f18d00;
+    }
+
+    .tel{
+      background-color: #ffee7d;
+    }
+
+    .line{
+      background-color: #6bc19a;
+    }
+
+    p{
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    .ttl_top img{
+      background: url(素材/22.svg) no-repeat top right/42px;
+    }
+
+    /* ==========================================================================
+       2. ヘッダー
+       ========================================================================== */
+    
+    .header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 2;
+      background-color: transparent;
+      padding: 10px 0;
+      height: 80px;
+    }
+
+    .header_left {
+      width: 180px;
+      left: 0px;
+      position: absolute;
+    }
+
+    .header_left .logo {
+      width: 180px;
+      margin: 0 auto;
+    }
+
+    .header_left .logo img {
+      width: 150px;
+      border-radius: 0;
+    }
+
+    .header_right {
+      width: 100%;
+      top: 0;
+      height: auto;
+      right: 0;
+      position: relative;
+      z-index: 999;
+    }
+
+    /* ハンバーガーメニュー */
+    .hamburger {
+      position: absolute;
+      top: 18px;
+      right: 5px;
+      height: 30px;
+      width: 40px;
+      cursor: pointer;
+      z-index: 98;
+    }
+
+    .hamburger span {
+      height: 2px;
+      width: 24px;
+      background: #ffee7d;
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: auto;
+      transition: all 0.2s ease;
+    }
+
+    .hamburger span:nth-child(1) { top: 0; }
+    .hamburger span:nth-child(2) { top: 6px; }
+    .hamburger span:nth-child(3) { top: 12px; }
+
+    .btn_ham.active span:first-child {
+      transform: rotate(45deg);
+      top: 6px;
+    }
+    .btn_ham.active span:nth-child(2) {
+      transform: rotate(-45deg);
+    }
+    .btn_ham.active span:nth-child(3) {
+      opacity: 0;
+    }
+
+    /* ナビゲーション */
+    .header .gnavi {
+      display: none;
+      width: 100%;
+      height: 100vh;
+      position: fixed;
+      right: 10;
+      top: 12;
+      z-index: 99;
+    }
+
+    .header .gnavi ul {
+      background: #ffee7d;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 80%;
+      border-radius: 30px 0 0 30px;
+      padding: 60px 30px;
+      list-style: none;
+      margin: 0;
+      max-height: 100vh;
+      overflow-y: auto;
+    }
+
+    .header .gnavi ul li {
+      margin: 0;
+      
+    }
+
+    .header .gnavi ul a {
+      display: block;
+      padding: 10px 20px;
+      margin: 10px 0;
+      border-radius: 20px;
+    }
+
+    .header .gnavi ul a img {
+      height: 20px;
+      
+      border-radius: 0;
+    }
+
+    .header .gnavi .gnaviBg {
+      width: 100%;
+      height: 100vh;
+      background: rgba(86, 56, 50, 0.7);
+      position: fixed;
+      top: 0;
+      right: 0;
+    }
+
+    .btn_header {
+    width: 50px;
+    border-radius: 10px;
+    height: 50px;
+    line-height: 50px;
+    position: absolute;
+    z-index: 999;
+    margin: 0;
+    padding-left: 0px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    background-color: #f18d00;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.25);
+    }
+
+    .btn_header.insta {
+        padding-left: 0px;
+        right: 70px;
+        top: 12px;
+        z-index: 999;
+        background: url(素材/download-1.svg) #f4a694 no-repeat center center / 26px;
+    }
+
+    .insta{
+      z-index: 999;
+    }
+
+    .home .btn_header.facebook {
+        right: 130px;
+        top: 12px;
+        z-index: 999;
+        background: url(素材/download.svg) #6fa6c3 no-repeat 39% 50% / 26px;
+    }
+
+    .facebook{
+      z-index: 999;
+    }
+
+    .btn_ham{
+      z-index: 9999;
+      right: 10px;
+      top: 12px;
+    }
+
+    .btn_ham.active{
+      z-index: 9999;
+    }
+
+    /* ==========================================================================
+       3. メインコンテンツ共通
+       ========================================================================== */
+    
+    .main_cont {
+      padding-top: 0px;
+    }
+
+    .main_cont, .main_cont_inner {
+      overflow-x: hidden;
+    }
+
+    .main_cont_inner {
+      background: #ffee7d;
+    }
+
+    .section_wrap {
+      padding-top: 80px;
+    }
+
+    .padding_70 {
+      text-align: center;
+      background-color: #ffee7d;
+      padding: 0 20px;
+      line-height: 1.9;
+      font-size: 16px;
+      color: #222;
+    }
+
+    /* ==========================================================================
+       4. トップMVセクション
+       ========================================================================== */
+    
+    .page-top_mv {
+      background-color: #fff;
+      top:0rem;
+      padding: 20px 0 40px;
+      position: relative;
+      border-radius: 0 0 60px 60px;
+      padding-top:   100px;
+    }
+
+    .page-top_mv_inner {
+      max-width: 420px;
+      margin: 0 auto;
+      padding: 0 20px;
+      position: relative;
+      margin-top: 40px;
+    }
+
+    .page-top_mv_inner > img:first-child {
+      max-width: 300px;
+      margin: 0 auto 20px;
+    }
+
+    .page-top_mv_inner_top {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .page-top_mv_inner_top .catch {
+      max-width: 370px;
+      margin: 0 auto 20px;
+      margin-top: 0.1px;
+    }
+
+    /* 営業時間 */
+    .list_flex.info {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin: 15px 0;
+      font-size: 14px;
+    }
+
+    .list_flex.info p {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      margin: 0;
+    }
+
+    .ico_time::before,
+    .ico_holiday::before {
+      content: "⏰";
+      font-size: 16px;
+      margin-right: 5px;
+    }
+
+    .ico_holiday::before {
+      content: "📅";
+    }
+
+    .orange {
+      color: #f58a28;
+      font-weight: 700;
+    }
+
+    .w600 { font-weight: 600; }
+    .textL { font-size: 16px; }
+    .en { font-family: 'Arial', sans-serif; }
+
+    /* 注意バッジ */
+    .bg_orange {
+      display: inline;
+      margin: 0px ;
+      background: #f58a28;
+      color: #fff;
+      font-weight: 700;
+      font-size: 14px;
+      padding: 5px 20px;
+      border-radius: 0px;
+      
+      text-align: center;
+    }
+
+    .mt5 { margin-top: 5px; }
+    .mt10 { margin-top: 10px; }
+    .mt20 { margin-top: 20px; }
+    .mt30 { margin-top: 30px; }
+    .mt40 { margin-top: 40px; }
+
+    .attention {
+      font-size: 13px;
+      color: #666;
+      text-align: center;
+      line-height: 1.6;
+    }
+
+    
+
+    .btn_under {
+      color: #000;
+      text-decoration: underline;
+      font-weight: 600;
+    }
+
+    /* ボタン群 */
+    .list_flex.btn {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      align-items: center;
+      margin: 20px 0;
+    }
+
+    .btn_img {
+      display: block;
+      width: 90%;
+      max-width: 360px;
+      border-radius: 50px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      margin: 0 auto;
+    }
+
+    .btn_img:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .btn_img img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 50px;
+      
+    }
+
+    /* MVの犬画像 */
+    .page-top_mv_inner .img1,
+    .page-top_mv_inner .img2 {
+      max-width: 250px;
+      margin: 20px auto 0;
+    }
+
+    .page-top_mv_inner .img2 {
+      margin-top: -50px;
+    }
+
+    .img1{
+      transform: translateY(10%);
+    }
+
+    /* ==========================================================================
+       5. Aboutセクション
+       ========================================================================== */
+    
+    .page-top_about {
+      position: relative;
+      margin-top: 60px;
+    }
+
+    .page-top_about .padding_70{
+      margin-bottom: 40%;
+    }
+
+    .page-top_about .img1 {
+      max-width: 200px;
+      margin: 0 auto 30px;
+    }
+
+    .ttl_top {
+      text-align: center;
+      margin: 0 0 30px;
+    }
+
+    .ttl_top img {
+      height: 40px;
+      margin: 0 auto;
+      padding: 10px 30px 0px;
+    }
+
+    .ttl_top span {
+      display: block;
+      font-size: 0;
+      height: 0;
+      overflow: hidden;
+    }
+
+    .page-top_about_inner {
+      position: relative;
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 0px;
+      box-shadow: 0;
+      
+    }
+
+    .page-top_about_inner .bg {
+      position: absolute;
+      display: block;
+      width: 100%;
+      z-index: 1;
+      bottom: -40%;
+    }
+
+    .page-top_about_inner .txt {
+      background: #fff;
+      border-radius: 30px;
+      padding: 40px 20px 30px;
+      position: relative;
+      z-index: 1;
+      
+    }
+
+    .page-top_about_inner .txt p {
+      margin: 0;
+      line-height: 1.9;
+      text-align: center;
+    }
+
+    .textC { text-align: center; }
+
+    .page-top_about .img2 {
+      max-width: 280px;
+      margin: -30px 0 0;
+      position: absolute;
+      right: 0;
+      z-index: 1;
+    }
+
+    /* スライダー（Swiper風） 
+    .swiper3 {
+      max-width: 420px;
+      margin: 40px auto;
+      padding: 0 20px;
+      position: relative;
+    }
+
+    .swiper-wrapper {
+      display: flex;
+      transition: transform 0.5s ease;
+      position: relative;
+    }
+
+    .swiper-slide {
+      min-width: 100%;
+      flex-shrink: 0;
+    }
+
+    .swiper-slide img {
+      width: 100%;
+      height: auto;
+      border-radius: 15px;
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 40px;
+      height: 40px;
+      background: rgba(245, 138, 40, 0.9);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 10;
+      transition: background 0.3s;
+    }
+
+    .swiper-button-prev:hover,
+    .swiper-button-next:hover {
+      background: rgba(245, 138, 40, 1);
+    }
+
+    .swiper-button-prev {
+      left: 10px;
+    }
+
+    .swiper-button-next {
+      right: 10px;
+    }
+
+    .swiper-button-prev img,
+    .swiper-button-next img {
+      width: 20px;
+      height: 20px;
+    }*/
+
+   /* スライダー全体 */
+.swiper3 {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  overflow: hidden; /* visible から hidden に変更 */
+  padding: 20px 0; /* 上下に余白を追加 */
+}
+
+/* 各スライド - 重要な変更 */
+.swiper3 .swiper-slide {
+  width: 300px; /* auto ではなく固定幅を指定 */
+  transition: transform 0.4s ease;
+}
+
+.swiper3 .swiper-slide img {
+  width: 100%;
+  height: auto;
+  border-radius: 300px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* アクティブスライドを少し拡大 */
+.swiper3 .swiper-slide-active {
+  transform: scale(1.05);
+  z-index: 2;
+}
+
+/* ナビゲーション矢印 */
+.swiper3 .swiper-button-prev,
+.swiper3 .swiper-button-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(0%);
+  transform: translateX(-50%);
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.swiper3 .swiper-button-prev {
+  left: 80px;
+}
+
+.swiper3 .swiper-button-next {
+  transform: translateX(50%);
+  right: 80px;
+}
+
+.swiper3 .swiper-button-prev img,
+.swiper3 .swiper-button-next img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* レスポンシブ調整 */
+@media (max-width: 768px) {
+  .swiper3 .swiper-slide {
+    width: 280px; /* スマホでは少し小さく */
+  }
+  .swiper3 .swiper-slide-active {
+    transform: scale(1.03);
+  }
+}
+    .swiper-button-prev::after{
+      display: none;
+    }
+    .swiper-button-next::after{
+      display: none;
+    }
+
+
+
+
+    /* ==========================================================================
+       6. サービスセクション
+       ========================================================================== */
+    
+    .page-top_service .main-img {
+      position: relative;
+      max-width: 100%;
+      margin: 0 auto 30px;
+      display: block;
+      right:-40px;
+    }
+
+    .ttl_dot {
+      position: relative;
+      display: block;
+      text-align: center;
+      margin: 30px 0 15px;
+      background-image: linear-gradient(to right, #f18d00 8px, transparent 1px);
+      background-size: 13px 2px;
+      background-repeat: repeat-x;
+      background-position: center bottom;
+    }
+
+    .home .page-top_service .ttl_dot {
+    background-image: linear-gradient(to right, #f18d00 8px, transparent 1px);
+    background-size: 13px 2px;
+    background-repeat: repeat-x;
+    background-position: left bottom;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
+    .padding_70 h3 {
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    .padding_70 p {
+      margin: 12px 0;
+      line-height: 1.8;
+    }
+
+    .textleft{
+      text-align: left;
+    }
+
+    /* ==========================================================================
+       7. ホテル利用規約セクション
+       ========================================================================== */
+    
+    .page-top_hotel {
+
+      padding: 0 0 60px;
+    }
+
+    .page-top_hotel .padding_70 {
+        background: #ffffff;
+    }
+
+    .naminami {
+      width: 100%;
+      max-width: 100%;
+      margin: 0;
+    }
+
+    /* 番号付きリスト */
+    ol {
+      list-style: none;
+      margin: 0;
+      padding: 30px 20px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    ol li {
+      margin: 30px 0;
+      padding-bottom: 30px;
+      border-bottom: 1px dashed #ddd;
+    }
+
+    
+
+    ol li .num {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 15px;
+      width: 40px;
+      height: 40px;
+      border: 2px solid #f58a28;
+      border-radius: 50%;
+      color: #f58a28;
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    ol li p {
+      font-size: 15px;
+      line-height: 1.9;
+      color: #333;
+      margin: 0;
+      text-align: left;
+    }
+
+    .textB { font-size: 18px; }
+    .headingS { font-size: 16px; }
+    .textN { font-size: 14px; }
+    .textS { font-size: 13px; }
+    .w500 { font-weight: 500; }
+    .w700 { font-weight: 700; }
+
+    /* 持ち物リスト */
+    .belongings {
+      margin: 40px 0;
+    }
+
+    .belongings h3 {
+      text-align: center;
+      margin-bottom: 0px;
+    }
+
+    .belongings .list_flex {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 20px;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 0 20px;
+      list-style: none;
+    }
+
+    .belongings .list_flex li {
+      width: calc(50% - 10px);
+      text-align: center;
+    }
+
+    .belongings .list_flex li img {
+      max-width: 220px;
+      width: 100%;
+      margin: 0 auto 10px;
+    }
+
+    .belongings .list_flex li h4 {
+      font-size: 14px;
+      margin: 10px 0 5px;
+      font-weight: 600;
+    }
+
+    .caption {
+      font-size: 12px;
+      color: #666;
+      line-height: 1.5;
+    }
+
+    .read {
+      text-align: center;
+      margin: 40px 0 0 0;
+      padding-bottom: 60px;
+    }
+
+    .read h3 {
+      margin-bottom: 20px;
+    }
+
+    .read .btn_img {
+      max-width: 300px;
+    }
+
+    .ttl_dotshort::after{
+      content: "";
+      background-image: linear-gradient(to right, #f18d00 8px, transparent 1px);
+      background-size: 13px 2px;
+      background-repeat: repeat-x;
+      background-position: left bottom;
+      margin: 0 auto 30px;
+      padding-bottom: 10px;
+      height: 2px;
+      display: block;
+      position: relative;
+      width: 60px;  
+    }
+
+    
+
+    /* ==========================================================================
+       8. FAQセクション
+       ========================================================================== */
+    
+    .btn_faq {
+      background: #fff;
+      border-radius: 15px;
+      margin: 15px auto;
+      max-width: 600px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      cursor: pointer;
+      transition: box-shadow 0.3s;
+      margin-left: 0px;
+    }
+
+    .btn_faq:hover {
+      box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+    }
+
+    .drp_point {
+      padding: 20px;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      position: relative;
+    }
+
+    .drp_point h3 {
+      flex: 1;
+      margin: 0;
+      font-size: 16px;
+      line-height: 1.6;
+      text-align: left;
+    }
+
+    .drp_point .plus {
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 20px;
+      height: 20px;
+    }
+
+    .drp_point .plus::before,
+    .drp_point .plus::after {
+      content: "";
+      position: absolute;
+      background: #f58a28;
+      transition: transform 0.3s;
+    }
+
+    .drp_point .plus::before {
+      width: 20px;
+      height: 2px;
+      top: 9px;
+      left: 0;
+    }
+
+    .drp_point .plus::after {
+      width: 2px;
+      height: 20px;
+      top: 0;
+      left: 9px;
+    }
+
+    .btn_faq.active .plus::after {
+      transform: rotate(90deg);
+    }
+
+    .drp_dwn {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      padding: 0 20px;
+    }
+
+    .btn_faq.active .drp_dwn {
+      max-height: 500px;
+      padding: 0 20px 20px;
+      margin: 0px;
+    }
+
+    .drp_dwn p {
+      margin: 0px;
+      line-height: 1.8;
+      text-align: left;
+      padding-left: 0px;
+    }
+
+    /* ==========================================================================
+       8-5.ワンちゃんと肉球ののアニメーション
+       ========================================================================== */
+
+    .main{
+      width: 100%;
+      max-width: 250px;
+      margin: 0 auto;
+    }
+    .wanwan{
+      position: relative;
+      padding-top: 100px;
+      padding-bottom: 20px;
+    }
+    .print{
+      width: 52px;
+      position: absolute;
+      
+    }
+
+    .printone{
+      
+      left: 10px;
+      top: 60px;
+      
+    }
+
+    .print {
+      /* 1秒ごとにトグル（見える→消える→見える...） */
+      animation: print 1s steps(1, start) infinite;
+      /* 見た目調整の例 */
+      display: inline-block;
+    }
+
+    .printtwo{
+      top:120px;
+      animation-delay: 0.6s; /* ← 3秒待ってから点滅開始 */
+    }
+
+    .printthree{
+      right: 20px;
+      top:150px;
+      animation-delay: 0.8s; /* ← 3秒待ってから点滅開始 */
+    }
+
+    .printfour{
+      right: 10px;
+      top: 210px;
+      animation-delay: 0.8s; /* ← 3秒待ってから点滅開始 */
+    }
+
+    /* キーフレーム：0%は表示、50%で消える（任意でデューティ比を変更） */
+    @keyframes print {
+      0%   { opacity: 1; }
+      50%  { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    /* アクセシビリティ：ユーザーが「アニメーションを減らす」設定していたら無効化 */
+    @media (prefers-reduced-motion: reduce) {
+      .print {
+        animation: none;
+        opacity: 1; /* アニメーション停止時は表示しておくのが親切 */
+      }
+    }
+
+    /* ==========================================================================
+       9. 料金表セクション
+       ========================================================================== */
+    
+    .tabs {
+      max-width: 600px;
+      margin: 30px auto;
+    }
+
+    .tab_inner {
+      padding: 0 0px;
+    }
+
+    .tab_list {
+      display: flex;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      border-radius: 10px 10px 0 0;
+      overflow: hidden;
+    }
+
+    .tab-item {
+      flex: 1;
+      padding: 15px 10px;
+      text-align: center;
+      background: #fffbe0;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 600;
+      transition: background 0.3s;
+      border-bottom: 2px solid #e0e0e0;
+      position: relative;
+    }
+
+    .tab-item.active {
+      background: #fff;
+      border-bottom: 2px solid #f58a28;
+    }
+
+    .tab-item::before {
+      content: "";
+      height: 14px;
+      top: -13px;
+      position: absolute;
+      left: 0;
+      width: 100%;
+      background-color: #fff;
+      border-radius: 20px 20px 0 0;
+      opacity: 1;
+    }
+
+    .tab-item.active::before {
+      opacity: 1;
+    }
+
+    .tab-contents {
+      background: #fff;
+      border-radius: 0 0 10px 10px;
+      padding: 20px;
+    }
+
+    .tab-panel {
+      display: none;
+    }
+
+    .tab-panel.active {
+      display: block;
+    }
+
+    .table_price {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+
+    .table_price th,
+    .table_price td {
+      padding: 12px 8px;
+      border-bottom: 1px solid #eee;
+      text-align: left;
+      font-size: 13px;
+    }
+
+    .table_price th {
+      font-weight: 600;
+      background: #fff8f0;
+    }
+
+    .table_price td {
+      text-align: center;
+    }
+
+    .table_price small {
+      display: block;
+      font-size: 11px;
+      color: #666;
+    }
+
+    .attention_cont {
+      
+      padding: 20px;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+
+    .attention_cont h4 {
+      margin: 0 0 5px;
+    }
+
+    .attention_cont_inner{
+      padding-top: 10px;
+      padding-bottom: 10px;
+      border-top: 2px solid #f18d00;
+      border-bottom: 2px solid #f18d00;
+    }
+
+    .attention_cont_inner p {
+      margin: 8px 0;
+      font-size: 13px;
+      line-height: 1.6;
+      text-align: left;
+    }
+
+    .attention_cont_inner .attention{
+      padding-left: 14px;
+      position: relative;
+    }
+
+    .attention_cont_inner .attention::before{
+      content: "※";
+      position: absolute;
+      
+      left: 0;
+
+    }
+
+    .list_circle {
+      list-style: none;
+      padding-left: 0;
+      margin: 15px 0;
+    }
+
+    .list_circle li {
+      padding-left: 20px;
+      position: relative;
+      margin: 8px 0;
+      font-size: 13px;
+      text-align: left;
+    }
+
+    .list_circle li::before {
+      content: "●";
+      position: absolute;
+      left: 0;
+      color: #f58a28;
+      font-size: 10px;
+    }
+
+    .blocktext{
+      display: block;
+    }
+
+    .att{
+      position: relative;
+    }
+
+    .att .attention{
+      text-align: left;
+      padding-left: 15px;
+    }
+    
+    .att .attention::before {
+      content: "※";
+      position: absolute;
+      left: 0;
+      color: #000; /* マークの色 */
+      font-weight: bold;
+    }
+
+
+
+    /* ==========================================================================
+       10. お問い合わせセクション
+       ========================================================================== */
+    
+    .page-top_contact img{
+
+    }
+    
+    .page-top_contact_inner {
+    background: #f58a28;
+    padding: 30px;
+    border-radius: 0px;
+    }
+
+    .page-top_contact_inner p {
+      color: #fff;
+      margin: 0 0 15px;
+      font-weight: 600;
+    }
+
+    .page-top_contact_inner .btn_img {
+      margin: 15px auto;
+    }
+
+    .tab-panel .attention{
+      position: relative;
+      text-align: left;
+      margin-left: 13px;
+      padding-left:  15px;
+    }
+
+    .tab-panel .attention::before{
+      content: "※";
+      position: absolute;
+      left: 0;
+      color: #000; /* マークの色 */
+      font-weight: bold;
+    }
+
+    /* ==========================================================================
+       11. フッター
+       ========================================================================== */
+    
+    #footer {
+      background: #fffbe0;
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    .footer small {
+      font-size: 12px;
+      color: #666;
+    }
+
+    /* ==========================================================================
+       12. レスポンシブ（スマホ最適化）
+       ========================================================================== */
+    
+    
+
+      
+
+      .hamburger {
+        right: 5px;
+        top:18px;
+        z-index: 9999;
+      }
+
+      .section_wrap {
+        padding-top: 60px;
+      }
+
+      .padding_70 {
+        padding: 0 30px;
+        font-size: 14px;
+      }
+
+      .page-top_mv_inner {
+        padding: 0 15px;
+      }
+
+      .btn_img {
+        width: 95%;
+      }
+
+      .belongings .list_flex {
+        padding: 0 15px;
+      }
+
+      .table_price th,
+      .table_price td {
+        padding: 10px 5px;
+        font-size: 12px;
+      }
+
+      .drp_point {
+        padding: 15px;
+      }
+
+      .drp_point h3 {
+        font-size: 14px;
+        padding-right: 40px;
+      }
+    
+
+    .sp { display: block; }
+    .pc { display: none; }
+    .tab { display: none; }
+
+    @media (min-width: 768px) {
+      .sp { display: none; }
+      .pc { display: block; }
+      .tab { display: block; }
+    }
+
+    .page-top_mv{
+      padding-top: 100px;
+    }
+
+
+    .page-top_contact_inner {
+    background: #f58a28;
+    padding: 30px;
+    border-radius: 0px;
+    }
+
+    
+
+    
+  </style>
+</head>
+
+<body class="home">
+  <header class="header">
+    <div class="header_left">
+      <a href="#" class="logo">
+        <img src="素材/1.png"  alt="新潟県長岡市のワンちゃんにやさしいドッグホテル" />
+      </a>
+    </div>
+
+    <div class="header_right">
+      <div class="btn_header btn_ham">
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+
+      <nav class="gnavi">
+        <div class="gnaviBg"></div>
+        <ul>
+          <li><a href="#section01" class="close"><img src="素材/1-1.svg" alt="ポケットってどんなところ"></a></li>
+          <li><a href="#section02" class="close"><img src="素材/1-2.svg" alt="ポケットのサービス"></a></li>
+          <li><a href="#section03" class="close"><img src="素材/1-3.svg" alt="ホテルのご利用にあたって"></a></li>
+          <li><a href="#section04" class="close"><img src="素材/1-5.svg" alt="よくある質問"></a></li>
+          <li><a href="#section05" class="close"><img src="素材/1-6.svg" alt="料金表"></a></li>
+          <li><a href="#section06" class="close"><img src="素材/1-7.svg" alt="お問い合わせ"></a></li>
+        </ul>
+      </nav>
+
+      <a href="" class="btn_header insta hover en textS" target="_blank">
+      </a>
+      <a href="" class="btn_header facebook hover en textS" target="_blank">
+      </a>
+
+    </div>
+  </header>
+
+  <div class="main_cont page-top">
+    <div class="main_cont_inner">
+      <!-- MV -->
+      <section class="page-top_mv padding_70">
+        <div class="page-top_mv_inner">
+          
+          <div class="page-top_mv_inner_top">
+            <img src="素材/２.svg" alt="キャッチコピー" class="catch">
+            <div class="list_flex info">
+              <p class="ico_time"><span class="orange w600">営業時間</span><span class="en textL w600">9:00〜18:00</span></p>
+              <p class="ico_holiday"><span class="orange w600">定休日</span><span class="textL w600">木曜日</span></p>
+            </div>
+            <p class="bg_orange mt5">現在新規受け入れを停止しています</p>
+            <p class="attention mt5">※ その他のお休みは<a href="#" class="btn_under">LINE</a>と<a href="#" class="btn_under">インスタグラム</a>でお伝えします</p>
+          </div>
+          <div class="list_flex btn">
+            <a href="tel:0258341100" class="btn_img tel">
+              <img src="素材/３.png" alt="電話">
+            </a>
+            <a href="#" class="btn_img line">
+              <img src="素材/4.png" alt="LINE">
+            </a>
+          </div>
+          <img src="素材/5.png" alt="犬" class="img1">
+        </div>
+      </section>
+
+      <!-- About -->
+      <section class="page-top_about section_wrap" id="section01">
+        <div class="padding_70">
+          <div class="page-top_about_inner textC textL">
+            <img src="素材/29.svg" alt="背景" class="bg">
+            <div class="txt">
+              <p>ペットは大切な家族です。<br>
+                家族を預けるなら、わんちゃんにとって<br>「安心」で「安全」なところがいい。</p>
+              <p class="mt20">ただのペットホテルではなく<br>飼い主さんもわんちゃんも<br>
+                また来たくなるような親しみやすく、<br>あたたかな場所となるように。</p>
+              <p class="mt20">そんな思いをたくさん詰め込んだ<br>
+                新しいドッグホテル『pocket（ポケット）』を<br>つくりました。</p>
+            </div>
+          </div>
+          <img src="素材/6.png" alt="犬" class="img2">
+        </div>
+
+
+        <div class="swiper3">
+  <div class="swiper-wrapper">
+    <!-- 1回目 -->
+    <div class="swiper-slide"><img src="素材/7.jpg" alt="施設1"></div>
+    <div class="swiper-slide"><img src="素材/8.jpg" alt="施設2"></div>
+    <div class="swiper-slide"><img src="素材/9.jpg" alt="施設3"></div>
+    <!-- 2回目（同じ画像を繰り返し） -->
+    <div class="swiper-slide"><img src="素材/7.jpg" alt="施設1"></div>
+    <div class="swiper-slide"><img src="素材/8.jpg" alt="施設2"></div>
+    <div class="swiper-slide"><img src="素材/9.jpg" alt="施設3"></div>
+  </div>
+  <div class="swiper-button-prev"><img src="https://www.doghotel-pocket.com/wp2024/wp-content/themes/pocket2024/images/arrow_left.svg" alt="前へ"></div>
+  <div class="swiper-button-next"><img src="https://www.doghotel-pocket.com/wp2024/wp-content/themes/pocket2024/images/arrow_right.svg" alt="次へ"></div>
+</div>
+      </section>
+
+      <!-- Service -->
+      <section class="page-top_service section_wrap" id="section02">
+        <h2 class="ttl_top">
+          <img src="素材/1-2.svg" alt="ポケットのサービス">
+          <span>ポケットのサービス</span>
+        </h2>
+        <img src="素材/10.png" alt="サービス" class="main-img">
+        <div class="padding_70">
+          <h3 class="ttl_dot textL w600">ドッグホテル</h3>
+          <p class="textleft">生後5ヶ月から9歳までの小型犬・中型犬、7歳までの大型犬のお預かりです。</p>
+          <h3 class="ttl_dot textL w600 mt30">デイケア</h3>
+          <p class="textleft">おでかけをしたい、急な用事、1匹でのお留守番が心配など、日帰りプランでお預かり致します。</p>
+          <h3 class="ttl_dot textL w600 mt30">ペットシッター</h3>
+          <p class="textleft">ネコちゃんは警戒心が強く新しい環境は苦手なことから、ペットシッターのみのご対応となります。<br>
+            ホテルが心配なネコちゃん、ワンちゃんご相談下さい。</p>
+        </div>
+      </section>
+
+      <!-- Hotel -->
+      <section class="page-top_hotel section_wrap" id="section03">
+        <img src="素材/30.svg" alt="波線" class="naminami">
+        <style>
+          .naminami{
+            margin: 0px;
+            padding: 0px;
+            display: block;
+            transform: translateY(10%);
+          }
+        </style>
+        <div class="padding_70">
+          <ol>
+            <li>
+              <p class="num headingS en">01</p>
+              <p>当店では基本的に<span class="orange">事前カウンセリング</span>が必要となります。<br>
+                しかし、遠方の方で難しい場合はお電話にて詳しくわんちゃんの情報をお聞かせください。当日情報と異なる場合はお断り致します。（見るからに不衛生、噛みつき癖など）</p>
+            </li>
+            <li>
+              <p class="num headingS en">02</p>
+              <p>定休日は木曜日です。<br>
+                チェックインアウトの受け付けはしておりませんが、<span class="orange">ご事情（ケガ、体調不良、入院、お葬式など。ワンちゃんが高齢犬、持病があるなど。）によりどうしても前泊や翌日お迎えが難しい場合ご相談下さい。</span>可能な限り対応させていただきます。</p>
+            </li>
+            <li>
+              <p class="num textB en">03</p>
+              <p>トイレの失敗でケージ内を汚してしまい足やお腹など身体をシャンプーする場合は別料金がかかります。</p>
+            </li>
+            <li>
+              <p class="num textB en">04</p>
+              <p><span class="orange">チェックインアウト時間を変更される場合は必ずご連絡ください。</span><br>
+                他のワンちゃんのお世話やお散歩、送迎などがあります。</p>
+            </li>
+            <li>
+              <p class="num textB en">05</p>
+              <p>わんちゃんは大好きな飼い主様と離れてお留守番をする時点でストレスを感じていると思います。</p>
+              <p class="mt10">本来わんちゃんは周囲から丸見えのスペースより、自分の身を隠して周りを観察しやすい狭いスペースの方が安心できるのですが家庭でケージ・サークルに入りなれていないわんちゃんは「閉じ込められる」という大きなストレスがかかる場合があります。</p>
+              <p class="mt10">その際に最も多いのが「タオルや毛布で鼻の上部をすりむいて出血してしまう」または「ここから出して！」とドアをがりがりし、「爪やパッドから出血してしまう」といったトラブルです。</p>
+              <p class="mt10">ペットホテルでのお預かりに備えて、<span class="orange">ご家庭でのケージ・サークルトレーニングをお薦め致します。</span></p>
+              <p class="mt10">万が一の災害の際にも必ずお役に立ちます。わんちゃんの今後のためにも「閉じ込める」のではなく「安心して過ごせるお部屋」を準備してあげましょう。</p>
+            </li>
+            <li>
+              <p class="num textB en">06</p>
+              <p><span class="orange">他のワンちゃんもお預かりしています。</span><br>
+                落ち着いている時にインターホンが鳴ると、それに反応して興奮したり不安定になってしまいます。特に朝夕の食後に興奮すると体調不良の原因になります。また大型犬は食後に興奮して動くと胃捻転を発症する確率が高くなり一刻を争う危険な状態になりかねません。</p>
+              <p class="mt10">その日のワンちゃんのメンバーやチェックインアウトの予定を考慮し食事時間や遊ぶ時間などを決めております。</p>
+            </li>
+          </ol>
+
+          <div class="belongings">
+            <h3 class="headingS ttl_dotshort">ご用意して頂くもの
+            </h3>
+            <ul class="list_flex">
+              <li>
+                <img src="素材/11.svg" alt="身分証明書">
+                <h4 class="textN w500">身分証明書</h4>
+                <p class="caption">運転免許証など飼い主様の<br>現住所を確認できいるもの</p>
+              </li>
+              <li>
+                <img src="素材/12.svg" alt="ワクチン証明書">
+                <h4 class="textN w500">狂犬病注射・<br>ワクチン証明書</h4>
+                <p class="caption">1年以内の<br>ワクチン接種を証明</p>
+              </li>
+              <li>
+                <img src="素材/13.svg" alt="首輪・リード">
+                <h4 class="textN w500">首輪・胴輪リード<br>など</h4>
+                <p class="caption">普段使用しているもの</p>
+              </li>
+              <li>
+                <img src="素材/14.svg" alt="食事">
+                <h4 class="textN w500">いつもの食事・<br>おやつ等</h4>
+              </li>
+              <li>
+                <img src="素材/15.svg" alt="タオル・ベッド">
+                <h4 class="textN w500">匂いの付いた タオル、<br>ベッド</h4>
+              </li>
+              <li>
+                <img src="素材/16.svg" alt="診察券">
+                <h4 class="textN w500">かかりつけの<br>動物病院の診察券、<br>動物病院手帳など</h4>
+              </li>
+            </ul>
+            <p class="orange textS w500 textC mt40">大切なワンちゃんを安心安全にお預かりする為にも<br>何卒ご理解、ご協力のほどお願い申し上げます。</p>
+          </div>
+
+          <div class="read">
+            <h3 class="textB ttl_dotshort">必ずご一読くださいませ</h3>
+            <a href="" class="btn_img pdf" target="_blank">
+              <img src="https://www.doghotel-pocket.com/wp2024/wp-content/themes/pocket2024/images/cp/cp_btn_pdf.png" alt="利用規約を読む">
+            </a>
+          </div>
+          <style>
+            .btn_img.pdf{
+              background-color: #f4dec6;
+              max-width: 100%;
+              width: 100%;
+              margin: auto;
+            }
+          </style>
+        </div>
+        <img src="https://www.doghotel-pocket.com/wp2024/wp-content/themes/pocket2024/images/cp/cp_naminami2.svg" alt="波線" class="naminamiU">
+        <style>
+          .naminamiU{
+            margin: 0px;
+            padding: 0px;
+            display: block;
+            transform: translateY(-10%);
+          }
+        </style>
+      </section>
+
+      <!-- FAQ -->
+      <section class="page-top_faq section_wrap" id="section04">
+        <div class="padding_70">
+          <h2 class="ttl_top">
+            <img src="素材/1-5.svg" alt="よくある質問">
+            <span>よくある質問</span>
+          </h2>
+
+          <dl class="btn_faq">
+            <dt class="drp_point">
+              <span class="en w700 orange headingS">Q.</span>
+              <h3 class="textL w700">今までにワクチンを打った事がないのですが、預ける前日に接種すれば大丈夫？<span class="plus"></span></h3>
+            </dt>
+            <dd class="drp_dwn">
+              <p class="textN w500">ワクチンは接種後2週間ほど経過していないと効果がありません。ホテル利用の２週間前までに接種をお願いします。<br>
+                <span class="orange">ワクチン・ノミダニ・フィラリア予防をされていない場合は、お断りする場合がございます。</span>
+              </p>
+            </dd>
+          </dl>
+
+          <dl class="btn_faq">
+            <dt class="drp_point">
+              <span class="en w700 orange headingS">Q.</span>
+              <h3 class="textL w700">見学することはできますか？<span class="plus"></span></h3>
+            </dt>
+            <dd class="drp_dwn">
+              <p class="textN w500">はい、できます。ですが、他のお客様のお迎えやお手続きもございますので必ず電話でアポイントを取ってからお越しくださいませ。
+                <a href="tel:0258341100">tel:0258-34-1100</a>
+              </p>
+            </dd>
+          </dl>
+
+          <dl class="btn_faq">
+            <dt class="drp_point">
+              <span class="en w700 orange headingS">Q.</span>
+              <h3 class="textL w700">吠え癖や噛み癖があるのですが預かってもらえますか？<span class="plus"></span></h3>
+            </dt>
+            <dd class="drp_dwn">
+              <p class="textN w500">吠える子はお預かり中吠え続け、声が枯れてしまう場合があります。そのことをご理解して頂いてのお預かりとなります。ただ噛み癖がある子はお預かりできません。</p>
+            </dd>
+          </dl>
+
+          <dl class="btn_faq">
+            <dt class="drp_point">
+              <span class="en w700 orange headingS">Q.</span>
+              <h3 class="textL w700">妊娠中、避妊・去勢していない子を預かってもらえますか？<span class="plus"></span></h3>
+            </dt>
+            <dd class="drp_dwn">
+              <p class="textN w500">未去勢の男の子の場合は事前に1日お預かりをさせていただき、その時の様子を見て判断させていただきます。<br>
+                未避妊の女の子の場合は前回のヒート時期を明確にご提示いただき、発情中は一切お預かりできません。<br>
+                途中で出血した場合はお迎えに来ていただきます。<br>
+                妊娠中のワンちゃんはお預かりできません。
+              </p>
+            </dd>
+          </dl>
+
+          <dl class="btn_faq">
+            <dt class="drp_point">
+              <span class="en w700 orange headingS">Q.</span>
+              <h3 class="textL w700">外飼いの子でも預かってもらえますか？<span class="plus"></span></h3>
+            </dt>
+            <dd class="drp_dwn">
+              <p class="textN w500">外飼いのわんちゃんは室内になれていないため予期せぬ行動をすることがあるので申し訳ありませんがお預かりできません。</p>
+            </dd>
+          </dl>
+
+          <dl class="btn_faq">
+            <dt class="drp_point">
+              <span class="en w700 orange headingS">Q.</span>
+              <h3 class="textL w700">クレジットカードは使えますか？<span class="plus"></span></h3>
+            </dt>
+            <dd class="drp_dwn">
+              <p class="textN w500">ご利用できません。</p>
+            </dd>
+          </dl>
+        </div>
+      </section>
+
+      <!--wanwan-->
+      
+      <div class="wanwan">
+        <img src="素材/21.svg" class="print printone" >
+        <img src="素材/20.svg" class="print printtwo">
+        <img src="素材/22.svg" class="print printthree">
+        <img src="素材/download-4.svg" class="print printfour">
+        <img src="素材/19.png" alt="３匹のワンちゃん" class="main">
+      </div>
+      
+
+      <!-- Price -->
+      <section class="page-top_price section_wrap padding_70" id="section05">
+        <h2 class="ttl_top">
+          <img src="素材/1-6.svg" alt="料金表">
+          <span>料金表</span>
+        </h2>
+
+        <div class="tabs">
+          <div class="tab_inner">
+            <ul class="tab_list list_flex">
+              <li class="tab-item active" tabindex="0">ドックホテル/デイケア</li>
+              <li class="tab-item" tabindex="0">シッター料金</li>
+            </ul>
+          </div>
+          <div class="tab-contents">
+            <div class="tab-panel active">
+              <h3 class="ttl_dotshort headingS">ドックホテル/デイケア料金</h3>
+              <table class="table_price">
+                <tbody>
+                  <tr>
+                    <th><div class="inner">超小型犬<small>〜2.9kgまで</small></div></th>
+                    <td><span class="orange textS blocktext">1時間</span><span class="en textB">450</span>円</td>
+                    <td><span class="orange textS blocktext">1日</span><span class="en textB">2,600</span>円</td>
+                    <td><span class="orange textS blocktext">1泊</span><span class="en textB">4,300</span>円</td>
+                  </tr>
+                  <tr>
+                    <th><div class="inner">小型犬<small>3.0〜6.9kg</small></div></th>
+                    <td><span class="orange textS blocktext">1時間</span><span class="en textB">600</span>円</td>
+                    <td><span class="orange textS blocktext">1日</span><span class="en textB">2,950</span>円</td>
+                    <td><span class="orange textS blocktext">1泊</span><span class="en textB">4,750</span>円</td>
+                  </tr>
+                  <tr>
+                    <th><div class="inner">中型犬<small>7.0〜19.9kg</small></div></th>
+                    <td><span class="orange textS blocktext">1時間</span><span class="en textB">950</span>円</td>
+                    <td><span class="orange textS blocktext">1日</span><span class="en textB">3,300</span>円</td>
+                    <td><span class="orange textS blocktext">1泊</span><span class="en textB">5,300</span>円</td>
+                  </tr>
+                  <tr>
+                    <th><div class="inner">大型犬<small>20〜34.9kg</small></div></th>
+                    <td><span class="orange textS blocktext">1時間</span><span class="en textB">1,300</span>円</td>
+                    <td><span class="orange textS blocktext">1日</span><span class="en textB">3,650</span>円</td>
+                    <td><span class="orange textS blocktext">1泊</span><span class="en textB">5,900</span>円</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p class="attention mt20">超小型犬・小型犬・中型犬は10才以上、大型犬8才以上はシニア枠になりシニア料金になります</p>
+              <div class="attention_cont mt40">
+                <h4 class="orange w600 textC">注意事項</h4>
+                <div class="attention_cont_inner">
+                  <p class="ico_time w600 textL">チェックイン <span class="en w500">9:00~18:00</span></p>
+                  <p class="textS attention mt10">早朝料金 (8:00~9:00) 2,650円</p>
+                  <p class="textS attention">8:00前は受付しておりませんので前泊扱いとなります</p>
+                  <p class="ico_time mt20 w600 textL">チェックアウト 翌日<span class="en w500">9:00~13:00</span></p>
+                  <p class="textS attention mt10">チェックアウトを13:00~18:00に延長する場合は上記1日料金を加算</p>
+                  <p class="textS attention">延長料金(18:00~19:00) 2,650円</p>
+                  <p class="textS attention">19:00以降は受付終了のため延泊扱いとなります</p>
+                  <ul class="list_circle mt20">
+                    <li>すべて税込価格となります。</li>
+                    <li>当日の急な時間変更に対応できない場合もございます。</li>
+                    <li>ゴールデンウィーク、お盆、シルバーウィーク、お正月は割増料金が加算されますので、お問い合わせください。</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="tab-panel">
+              <h3 class="ttl_dotshort headingS">ペットシッター料金</h3>
+              <table class="table_price">
+                <tbody>
+                  <tr>
+                    <th><div class="inner textC">小型犬</div></th>
+                    <td><span class="en textB">3,150</span>円/回</td>
+                  </tr>
+                  <tr>
+                    <th><div class="inner textC">中型犬</div></th>
+                    <td><span class="en textB">3,700</span>円/回</td>
+                  </tr>
+                  <tr>
+                    <th><div class="inner textC">大型犬</div></th>
+                    <td><span class="en textB">4,200</span>円/回</td>
+                  </tr>
+                  <tr>
+                    <th><div class="inner textC">ネコちゃん</div></th>
+                    <td><span class="en textB">3,150</span>円/回</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p class="textS mt20 attention">ネコちゃんはもともと警戒心が強く新しい環境は苦手です。<br>ホテルだとワンちゃんの声が聞こえ、ネコちゃんはストレスで体調を崩しやすいです。ポケットではネコちゃんの気持ちを考えてペットシッターのみとさせて頂きます。<br>ホテルが心配なネコちゃん、ワンちゃんご相談下さい。</p>
+            </div>
+          </div>
+        </div>
+        <div class="att">
+        <p class="attention mt30">
+          すべて税込価格となります。
+        </p>
+        <p class="attention">
+          当日の急な時間変更に対応できない場合もございます。
+        </p>
+        <p class="attention">
+          ゴールデンウィーク、お盆、シルバーウィーク、お正月は割増料金が加算されますので、お問い合わせください。
+        </p>
+        </div>
+       
+        
+        <a href="" class="btn_img line" target="_blank">
+          <img src="https://www.doghotel-pocket.com/wp2024/wp-content/themes/pocket2024/images/cp/cp_btn_line.png" alt="ラインで問い合わせる">
+        </a>
+      </section>
+
+      <!-- Contact -->
+      <section class="page-top_contact section_wrap" id="section06">
+        
+        <h2 class="ttl_top">
+          <img src="素材/1-7.svg" alt="お問い合わせ">
+          <span>お問い合わせ</span>
+        </h2>
+        <img src="https://www.doghotel-pocket.com/wp2024/wp-content/themes/pocket2024/images/cp/cp_naminami3.svg" alt="波線" class="naminami">
+        <div class="padding_70 page-top_contact_inner">
+          <p class="textB textC w600">お電話でのお問い合わせはこちらから</p>
+          <a href="tel:0258341100" class="btn_img tel" target="_blank">
+            <img src="https://www.doghotel-pocket.com/wp2024/wp-content/themes/pocket2024/images/cp/cp_btn_tel.png" alt="電話で問い合わせる">
+          </a>
+          <p class="textB textC w600 mt30">メールでのお問い合わせはこちら</p>
+          <a href="mailto:info@example.com" class="btn_img tel">
+            <img src="https://www.doghotel-pocket.com/wp2024/wp-content/themes/pocket2024/images/cp/cp_btn_mail.png" alt="メールで問い合わせる">
+          </a>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <footer id="footer">
+    <div class="footer">
+      <small class="en caption">pocket copy by Haru Omachi</small>
+    </div>
+  </footer>
+
+  <script>
+    // ハンバーガーメニュー
+    document.addEventListener("DOMContentLoaded", function () {
+      const btnHam = document.querySelector(".btn_ham");
+      const gnavi = document.querySelector(".gnavi");
+      const bg = document.querySelector(".gnaviBg");
+      const closeLinks = document.querySelectorAll(".gnavi .close");
+
+      btnHam.addEventListener("click", () => {
+        btnHam.classList.toggle("active");
+        gnavi.style.display = gnavi.style.display === "block" ? "none" : "block";
+      });
+
+      bg.addEventListener("click", () => {
+        gnavi.style.display = "none";
+        btnHam.classList.remove("active");
+      });
+
+      closeLinks.forEach(link => {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+          gnavi.style.display = "none";
+          btnHam.classList.remove("active");
+          
+          // スムーススクロール
+          const href = link.getAttribute("href");
+          if (href && href.startsWith("#")) {
+            const target = document.querySelector(href);
+            if (target) {
+              target.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
+          }
+        });
+      });
+    });
+
+    // スライダー
+    /*
+    document.addEventListener("DOMContentLoaded", () => {
+      const wrapper = document.querySelector(".swiper-wrapper");
+      const slides = document.querySelectorAll(".swiper-slide");
+      const prevBtn = document.querySelector(".swiper-button-prev");
+      const nextBtn = document.querySelector(".swiper-button-next");
+
+      if (!wrapper || slides.length === 0) return;
+
+      let currentIndex = 0;
+
+      function updateSlide() {
+        wrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
+      }
+
+      nextBtn.addEventListener("click", () => {
+        currentIndex = (currentIndex + 1) % slides.length;
+        updateSlide();
+      });
+
+      prevBtn.addEventListener("click", () => {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        updateSlide();
+      });
+
+      // スワイプ対応
+      let startX = 0;
+      let isDragging = false;
+
+      wrapper.addEventListener("touchstart", (e) => {
+        startX = e.touches[0].clientX;
+        isDragging = true;
+      });
+
+      wrapper.addEventListener("touchmove", (e) => {
+        if (!isDragging) return;
+        const moveX = e.touches[0].clientX;
+        const diff = startX - moveX;
+
+        if (diff > 50) {
+          currentIndex = (currentIndex + 1) % slides.length;
+          updateSlide();
+          isDragging = false;
+        } else if (diff < -50) {
+          currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+          updateSlide();
+          isDragging = false;
+        }
+      });
+
+      wrapper.addEventListener("touchend", () => {
+        isDragging = false;
+      });
+    });*/
+
+    // FAQ アコーディオン
+    document.addEventListener("DOMContentLoaded", () => {
+      const faqItems = document.querySelectorAll(".btn_faq");
+
+      faqItems.forEach(item => {
+        const dt = item.querySelector(".drp_point");
+        
+        dt.addEventListener("click", () => {
+          const isActive = item.classList.contains("active");
+          
+          // 全てのFAQを閉じる
+          faqItems.forEach(faq => faq.classList.remove("active"));
+          
+          // クリックされたFAQを開く（既に開いていた場合は閉じる）
+          if (!isActive) {
+            item.classList.add("active");
+          }
+        });
+      });
+    });
+
+    // タブ切り替え
+    document.addEventListener("DOMContentLoaded", () => {
+      const tabItems = document.querySelectorAll(".tab-item");
+      const tabPanels = document.querySelectorAll(".tab-panel");
+
+      tabItems.forEach((tab, index) => {
+        tab.addEventListener("click", () => {
+          // 全てのタブとパネルから active を削除
+          tabItems.forEach(t => t.classList.remove("active"));
+          tabPanels.forEach(p => p.classList.remove("active"));
+
+          // クリックされたタブとパネルに active を追加
+          tab.classList.add("active");
+          tabPanels[index].classList.add("active");
+        });
+      });
+    });
+
+    // スムーススクロール（ページ内リンク）
+    document.addEventListener("DOMContentLoaded", () => {
+      const links = document.querySelectorAll('a[href^="#"]');
+      
+      links.forEach(link => {
+        link.addEventListener("click", (e) => {
+          const href = link.getAttribute("href");
+          if (href === "#" || href === "") return;
+          
+          e.preventDefault();
+          const target = document.querySelector(href);
+          if (target) {
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        });
+      });
+    });
+  </script>
+  
+
+
+
+
+<!-- Swiper 読み込み（CDN） -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const swiper3 = new Swiper('.swiper3', {
+    loop: true,  // ← ループ機能をオフにする
+    centeredSlides: true,
+    slidesPerView: 'auto',
+    spaceBetween: 20,
+    navigation: {
+      nextEl: '.swiper3 .swiper-button-next',
+      prevEl: '.swiper3 .swiper-button-prev',
+    },
+    speed: 800,
+    // 最後のスライドに到達したら最初に戻る
+    on: {
+      reachEnd: function() {
+        setTimeout(() => {
+          this.slideTo(0, 800);
+        }, 4000);
+      }
+    }
+  });
+});
+</script>
+
+</body>
+</html>
